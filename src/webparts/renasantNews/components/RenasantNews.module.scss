@@ -1,0 +1,307 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+// Renasant One Team Brand Colors
+:root {
+  --rnst-indigo: #0E2D6D;
+  --rnst-yellow: #F9A608;
+  --rnst-orange: #EA5A00;
+  --rnst-sky-blue: #96D4E8;
+  --rnst-med-blue: #0073B1;
+  --rnst-magenta: #EC008C;
+  --rnst-white: #FFFFFF;
+  --rnst-light-gray: #F4F4F4;
+  --rnst-text-dark: #1A1A1A;
+}
+
+.renasantNews {
+  font-family: 'Source Sans 3', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--rnst-text-dark);
+  padding: 16px;
+
+  h1,
+  h2,
+  h3,
+  .headline {
+    font-family: 'DM Sans', 'Barlow', 'Segoe UI', sans-serif;
+    font-weight: 700;
+  }
+}
+
+.teams {
+  font-family: $ms-font-family-fallbacks;
+  padding: 0;
+}
+
+.errorState {
+  color: var(--rnst-orange);
+  padding: 20px;
+  text-align: center;
+}
+
+.webpartHeader {
+  margin-bottom: 24px;
+
+  .headerBanner {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+
+  .headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .sectionTitle {
+      font-size: 24px;
+      margin: 0;
+      color: var(--rnst-indigo);
+    }
+
+    .seeAllLink {
+      font-size: 14px;
+      color: var(--rnst-indigo);
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.skeletonCard {
+  border: 1px solid #e1dfdd;
+  border-radius: 12px;
+  overflow: hidden;
+
+  .skeletonBody {
+    padding: 16px;
+  }
+
+  .skeletonPill {
+    margin-bottom: 8px;
+  }
+}
+
+.emptyStateContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  background-color: var(--rnst-light-gray);
+  border-radius: 12px;
+  text-align: center;
+
+  .emptyStateIcon {
+    font-size: 48px;
+    color: var(--rnst-indigo);
+    margin-bottom: 16px;
+  }
+
+  .emptyStateMessage {
+    font-size: 18px;
+    color: var(--rnst-text-dark);
+  }
+}
+
+// News Layouts
+.newsLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .listSection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.list {
+  display: block; // For TS import mapping
+}
+
+.cards {
+  .listSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+}
+
+.featuredList {
+  @media (min-width: 1024px) {
+    flex-direction: row;
+
+    .featuredSection {
+      flex: 2;
+    }
+
+    .listSection {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .newsItemCard {
+        display: flex;
+        flex-direction: row;
+        height: 120px;
+
+        .thumbnailContainer {
+          width: 120px;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+// Article Cards
+.newsItemCard,
+.featuredArticleCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--rnst-white);
+  border: 1px solid #e1dfdd;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(14, 45, 109, 0.15);
+  }
+
+  .thumbnailContainer {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background-color: var(--rnst-light-gray);
+
+    .thumbnailImg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .badgeOverlay {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+      transition: transform 0.2s ease;
+    }
+  }
+
+  &:hover .badgeOverlay {
+    transform: scale(1.05);
+  }
+
+  .cardContent {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    .articleTitle {
+      font-size: 18px;
+      margin: 0 0 8px 0;
+      color: var(--rnst-indigo);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.3;
+    }
+
+    .articleExcerpt {
+      font-size: 14px;
+      color: #605e5c;
+      margin: 0 0 16px 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .articleMeta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #605e5c;
+      margin-top: auto;
+
+      .metaData {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        .metaIcon {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.featuredArticleCard {
+  .thumbnailContainer {
+    height: 300px;
+  }
+
+  .cardContent {
+    .articleTitle {
+      font-size: 24px;
+    }
+  }
+}
+
+.categoryBadge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.categoryColorBanner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+
+  .bannerText {
+    font-family: 'DM Sans', 'Barlow', 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    opacity: 0.9;
+  }
+}

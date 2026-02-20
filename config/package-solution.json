@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "renasant-news-client-side-solution",
+    "id": "b53fde31-d810-4416-9b92-babe15e62a9a",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.22.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "renasant-news description"
+      },
+      "longDescription": {
+        "default": "renasant-news description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "renasant-news Feature",
+        "description": "The feature that activates elements of the renasant-news solution.",
+        "id": "208b2d02-cbb9-4090-bf70-a6c109e64417",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/renasant-news.sppkg"
+  }
+}
